@@ -12,3 +12,21 @@ export const Container = styled.div`
   align-items: center;
 
 `;
+
+export const Name = styled.li`
+  
+`;
+export const Details = styled.li`
+
+`;
+
+export const Card = styled.ul`
+    width: 100%;
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`;
+

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { loadList } from '../../services/api';
+import React from 'react';
+import { connect } from 'react-redux';
 
 import { Accordion } from 'react-bootstrap';
 import {
@@ -10,18 +10,9 @@ import {
 } from './styles';
 
 
-export default function Header() {
-  const [ list, setList ] = useState({});
+function Content({ list }) {
+  console.log(list);
   
-  useEffect(() =>{
-    async function load(){
-      const data = await loadList();
-      
-      setList(data)
-    }
-    load();
-  })
-
   return (
     <Container>
       <Accordion as={Card} >
@@ -36,3 +27,5 @@ export default function Header() {
     </Container>
   );
 }
+
+export default connect(state => ({ list: state }) )(Content);
